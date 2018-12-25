@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "e8a753a5-772e-411c-a6de-a843642594da",
+		"name": "SMART-on-FHIR-exercise",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FHIR metadata (Cerner Conformance Statement)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json+fhir"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{API}}/metadata",
+					"host": [
+						"{{API}}"
+					],
+					"path": [
+						"metadata"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FHIR Patient/:id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{API}}/Patient/0000002",
+					"host": [
+						"{{API}}"
+					],
+					"path": [
+						"Patient",
+						"0000002"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FHIR Condition?patient=:id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{API}}/Condition?patient=4342012",
+					"host": [
+						"{{API}}"
+					],
+					"path": [
+						"Condition"
+					],
+					"query": [
+						{
+							"key": "patient",
+							"value": "4342012"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
